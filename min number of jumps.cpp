@@ -1,7 +1,7 @@
-#include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int main() {
+int main() 
+{
 	int t,n;
 	cin>>t;
 	while(t--)
@@ -11,11 +11,17 @@ int main() {
 	    int tab[n];
 	    for(int i=0;i<n;i++)
 	    {
+	        cin>>arr[i];
+	        tab[i]=INT_MAX;
+	    }
+	    tab[0]=0;
+	    for(int i=1;i<n;i++)
+	    {
 	        for(int j=0;j<i;j++)
 	        {
-               	            if(arr[j]!=0&&i<=arr[j]+j)
+                if(arr[j]!=0&&i<=arr[j]+j)
 	            {
-	                tab[i]=min(tab[j],tab[i]);   
+	                tab[i]=min(tab[j]+1,tab[i]);   
 	            }
 	        }
 	    }
